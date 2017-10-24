@@ -1,0 +1,25 @@
+#mcm-random-baby-name-generator-wp-form legend {
+  font-weight: bold;
+}
+
+#mcm-random-baby-name-generator-wp-form input[type=text] {
+  display: inline;
+  width: 90px;
+}
+
+#mcm-random-baby-name-generator-wp-form label, #mcm-random-baby-name-generator-wp-form select {
+  margin-bottom: 10px;
+}
+
+#mcm-random-baby-name-generator-wp-submit {
+  display: block;
+}
+
+
+#mcm-random-baby-name-generator-wp-no-results {
+  color: red;
+}
+
+#mcm-random-baby-name-generator-wp-result {
+  font-weight: bold;
+}
