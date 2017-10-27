@@ -9,7 +9,7 @@ Author URI: http://www.mcmwebsite.com
 License: GPL v. 2
 */
        
-// TODO - test on multiple PHP versions, e.g. 5.2, 5.3, 5.4, 5.5, 7.1  (main test env is 5.6.29, also tested on 7.0.19-1, and WP Engine's WP plugin tester on 5.3-7.0) also test with php7cc (PHP7 only) 
+// TODO - test on multiple PHP versions, e.g. 5.2, 5.3, 5.4, 5.5, 7.1  (tested on 5.6, 7.0, and WP Engine's WP plugin tester on 5.3-7.0) 
 
 
 $mcmRandomBabyNameGeneratorWP = new MCM_Random_Baby_Name_Generator_WP();                                       
@@ -31,12 +31,12 @@ class MCM_Random_Baby_Name_Generator_WP {
   
   function incStylesheet() {
   
-    $cssURL = get_site_url().'/wp-content/plugins/mcm-random-baby-name-generator-wp/css/style.css';
+    $cssURL = plugins_url( 'css/style.css', __FILE__ ); 
     wp_enqueue_style('style', $cssURL);
   
   }  
   
-  static function install() {  // create the database table if it don't exist already (on plugin activation)
+  static function install() {  // create the database table if it doesn't exist already (on plugin activation)
 
     if ( !self::mcmTableExists('mcm_Baby_Name') )
       self::mcmCreateDBTables();
