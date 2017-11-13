@@ -5,7 +5,7 @@ A WordPress plugin that provides a shortcode for showing a form for getting a ra
 Contributors: mcmwebsol
 Tags: plugin, file
 Requires at least: 4.8
-Tested up to: 4.8
+Tested up to: 4.9
 Requires PHP: 5.6
 Stable tag: 1.0
 License: GPLv2
