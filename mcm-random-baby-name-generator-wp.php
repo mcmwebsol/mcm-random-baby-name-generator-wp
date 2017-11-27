@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: MCM Random Baby Name Generator for WordPress
+Plugin Name: MCM Random Baby Name Generator
 Plugin URI: http://www.mcmwebsite.com/mcm-random-baby-name-generator-wp.html
 Description: This plugin displays a form for randomly generating a baby name by gender, the first letter of the name, length of the name, and popularity of the name. Use the shortcode [mcm-random-baby-name-generator-wp] 
-Version: 1.0
+Version: 1.1
 Author: MCM Web Solutions, LLC
 Author URI: http://www.mcmwebsite.com
 License: GPL v. 2
@@ -26,6 +26,8 @@ class MCM_Random_Baby_Name_Generator_WP {
   
     //add a filter for the shortcode
     add_filter('the_content', array(&$this, 'filter'), 10);
+    
+    add_filter( 'widget_text', array(&$this, 'filter') );
       
   } // end __construct()
   
