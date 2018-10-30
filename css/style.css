@@ -23,3 +23,8 @@
 #mcm-random-baby-name-generator-wp-result {
   font-weight: bold;
 }
+
+
+label, select {
+  display: block;
+}
