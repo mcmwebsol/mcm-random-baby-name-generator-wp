@@ -2,7 +2,7 @@
 Contributors: mcmwebsol
 Tags: plugin, file
 Requires at least: 4.8
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 5.6
 Stable tag: 1.2
 License: GPLv2
