@@ -33881,15 +33881,17 @@ $i_qs = "INSERT INTO `".$wpdb->prefix."mcm_Baby_Name` (`id`, `name`, `maleFemale
     		  $qs .= " AND numNamed < 30 ";	         
       }
       
+      $params[] = intval($_POST['numResults']);
+      
       $qs .= "       
              ORDER BY RAND()
-             LIMIT 1";                      
+             LIMIT %d";                      
              
       $qs = $wpdb->prepare($qs, $params);                     
       $rows = $wpdb->get_results($qs, ARRAY_A);  
       if ( count($rows) ) {
-         $row = $rows[0];   
-         $ret = ' <div id="mcm-random-baby-name-generator-wp-result-container"><span id="mcm-random-baby-name-generator-wp-result">Name: '.$row['name'].'</span>';               
+         foreach ($rows as $row)
+           $ret .= ' <div class="mcm-random-baby-name-generator-wp-result-container"><span id="mcm-random-baby-name-generator-wp-result">Name: '.$row['name'].'</span>';               
       }
       else {
          $ret = '<div id="mcm-random-baby-name-generator-wp-no-results">Sorry, no baby name was found that met the criteria you entered.</div>';
@@ -33942,7 +33944,8 @@ $i_qs = "INSERT INTO `".$wpdb->prefix."mcm_Baby_Name` (`id`, `name`, `maleFemale
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
-              </select>' .            
+              </select>' .      
+            ' <label id="mcm-random-baby-name-generator-num-results-to-return-label">Number of Results to Return: <input type="text" name="numResults" size="1" value="1" id="mcm-random-baby-name-generator-num-results-to-return" /> </label> '.         
             ' <input type="submit" name="submit" value="Get Baby Name" id="mcm-random-baby-name-generator-wp-submit" /></form>';
     
     }
