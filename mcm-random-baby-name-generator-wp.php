@@ -3,7 +3,7 @@
 Plugin Name: MCM Random Baby Name Generator
 Plugin URI: http://www.mcmwebsite.com/mcm-random-baby-name-generator-wp.html
 Description: This plugin displays a form for randomly generating a baby name by gender, the first letter of the name, length of the name, and popularity of the name. Use the shortcode [mcm-random-baby-name-generator-wp] 
-Version: 1.2
+Version: 1.3
 Author: MCM Web Solutions, LLC
 Author URI: http://www.mcmwebsite.com
 License: GPL v. 2
@@ -33890,8 +33890,8 @@ $i_qs = "INSERT INTO `".$wpdb->prefix."mcm_Baby_Name` (`id`, `name`, `maleFemale
       $qs = $wpdb->prepare($qs, $params);                     
       $rows = $wpdb->get_results($qs, ARRAY_A);  
       if ( count($rows) ) {
-         foreach ($rows as $row)
-           $ret .= ' <div class="mcm-random-baby-name-generator-wp-result-container"><span id="mcm-random-baby-name-generator-wp-result">Name: '.$row['name'].'</span>';               
+        foreach ($rows as $row)
+           $ret .= ' <div class="mcm-random-baby-name-generator-wp-result-container"><span id="mcm-random-baby-name-generator-wp-result">Name: '.$row['name'].'</span>';      
       }
       else {
          $ret = '<div id="mcm-random-baby-name-generator-wp-no-results">Sorry, no baby name was found that met the criteria you entered.</div>';
@@ -33944,8 +33944,9 @@ $i_qs = "INSERT INTO `".$wpdb->prefix."mcm_Baby_Name` (`id`, `name`, `maleFemale
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
-              </select>' .      
+              </select>' .         
             ' <label id="mcm-random-baby-name-generator-num-results-to-return-label">Number of Results to Return: <input type="text" name="numResults" size="1" value="1" id="mcm-random-baby-name-generator-num-results-to-return" /> </label> '.         
+              
             ' <input type="submit" name="submit" value="Get Baby Name" id="mcm-random-baby-name-generator-wp-submit" /></form>';
     
     }
