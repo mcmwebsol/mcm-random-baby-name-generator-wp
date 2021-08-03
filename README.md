@@ -28,6 +28,9 @@ This plugin does not collect any private data.
 
 == Changelog ==
 
+= 1.3 =
+* Added an option on the form to return more than one result
+
 = 1.2 =
 * Changed CSS to better work with Gutenberg/WordPress 5.0
 
